@@ -1,8 +1,6 @@
 <?php
 require_once "config.php";
 
-// echo $_SERVER['REQUEST_URI'];
-
 // Library
 require_once SOURCE_BASE . 'libs/helper.php';
 require_once SOURCE_BASE . 'libs/auth.php';
@@ -49,10 +47,8 @@ try {
     $url = parse_url(CURRENT_URI);
 
     $rpath = str_replace(BASE_CONTEXT_PATH, '', $url['path']);
-    // echo $rpath;
 
     $method = strtolower($_SERVER['REQUEST_METHOD']);
-    // echo strtolower($method);
 
     route($rpath, $method);
 
@@ -62,13 +58,3 @@ try {
 } catch (Throwable $e) {
     die('<h1>何かがおかしいようです。</h1>');
 }
-
-
-
-// if ($_SERVER['REQUEST_URI'] === '/shourin-quest/src/login') {
-//     require_once SOURCE_BASE . 'controllers/login.php';
-// } elseif ($_SERVER['REQUEST_URI'] === '/shourin-quest/src/register') {
-//     require_once SOURCE_BASE . 'controllers/register.php';
-// } elseif ($_SERVER['REQUEST_URI'] === '/shourin-quest/src/') {
-//     require_once SOURCE_BASE . 'controllers/home.php';
-// }
