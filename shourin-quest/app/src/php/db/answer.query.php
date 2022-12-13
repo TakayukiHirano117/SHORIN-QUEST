@@ -61,20 +61,4 @@ class AnswerQuery
         ]);
     }
 
-    // public static function fetchAnswers()
-    // {
-    //     $db = new DataSource;
-    //     $sql = '
-    //     select * from shourinzi.answers a 
-    //     inner join shourinzi.topics t 
-    //         on a.topic_id = t.id 
-    //     where t.del_flg != 1
-    //         and a.del_flg != 1
-    //         and t.published = 1
-    //     order by a.id desc';
-
-    //     $result = $db->select($sql, [], DataSource::CLS, TopicModel::class);
-
-    //     return $result;
-    // }
 }
