@@ -10,8 +10,6 @@ function route($rpath, $method)
 {
     try {
 
-        // throw new Error();
-
         if ($rpath === '') {
             $rpath = 'home';
         }
@@ -23,14 +21,12 @@ function route($rpath, $method)
             return;
         }
 
-        // echo $targetFile;
         require_once $targetFile;
 
         $rpath = str_replace('/', '\\', $rpath);
         $fn = "\\controller\\{$rpath}\\{$method}";
         // echo $fn;
 
-        $fn();
     } catch (Throwable $e) {
         Msg::push(Msg::DEBUG, $e->getMessage());
         Msg::push(Msg::ERROR, '何かがおかしいようです。');
