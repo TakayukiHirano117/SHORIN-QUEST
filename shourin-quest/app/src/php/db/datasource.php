@@ -11,7 +11,7 @@ class DataSource
     private $sqlResult;
     public const CLS = 'cls';
 
-    public function __construct($host = 'localhost', $port = '3306', $dbName = 'shourinzi', $username = 'takayukihirano', $password = 'Ikusa117')
+    public function __construct($host = 'ホスト名', $port = 'ポート番号', $dbName = 'データベース名', $username = 'ユーザー名', $password = 'パスワード')
     {
 
         $dsn = "mysql:host={$host};port={$port};dbname={$dbName};";
