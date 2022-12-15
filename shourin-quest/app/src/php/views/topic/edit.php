@@ -9,15 +9,17 @@ function index($topic, $is_edit)
     <h1 class=h2 mb-3""><?php echo $header_title ?></h1>
 
     <div class="bg-white p-4 shadow-sm mx-auto rounded">
-        <form action="<?php echo CURRENT_URI; ?>" method="POST">
+        <form class="validate-form" action="<?php echo CURRENT_URI; ?>" method="POST" novalidate autocomplete="off">
             <input type="hidden" name="topic_id" value="<?php echo $topic->id; ?>">
             <div class="form-group">
                 <label for="title">タイトル</label>
-                <input type="text" id="title" name="title" value="<?php echo $topic->title; ?>" class="form-control">
+                <input type="text" id="title" name="title" value="<?php echo $topic->title; ?>" class="form-control validate-target" required maxlength="50" autofocus>
+                <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
                 <label for="">本文</label>
-                <textarea rows="10" id="body" name="body" value="" class="form-control"><?php echo $topic->body; ?></textarea>
+                <textarea rows="10" id="body" name="body" value="" class="form-control validate-target" required maxlength="1000"><?php echo $topic->body; ?></textarea>
+                <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
                 <label for="published">公開状態</label>
