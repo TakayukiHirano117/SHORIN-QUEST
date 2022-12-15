@@ -11,6 +11,7 @@ function footer()
         <span class="text-muted"> &copy; TAKAYUKI HIRANO</span>
     </footer>
     </div>
+    <script src="<?php echo BASE_JS_PATH ?>form-validate.js"></script>
     </body>
 
     </html>
